@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vbguest.auto_update = false
+  config.vm.define "ubuntu" do |ubuntu|
+    ubuntu.vm.box = "ubuntu/trusty64"
+    ubuntu.vm.provision "file", source: "~/.ssh/id_rsa", destination: "/home/vagrant/.ssh/id_rsa"
+    ubuntu.vm.provision "shell", inline: <<SCRIPT
+    sudo apt-get update -y
+    sudo apt-get install -y build-essential
+    sudo apt-get install -y ruby ruby-dev
+    sudo gem install travis -v 1.8.9 --no-rdoc --no-ri
+SCRIPT
+  end
+end
