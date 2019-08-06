@@ -2,7 +2,7 @@
 
 curl -L -O https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init
 chmod +x rustup-init
-./rustup-init --default-toolchain stable --no-modify-path -y
+./rustup-init --default-toolchain 1.35.0 --no-modify-path -y
 ~/.cargo/bin/rustup target add x86_64-unknown-linux-musl
 
 echo "source ~/.cargo/env" >> ~/.bashrc
