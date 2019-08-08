@@ -8,6 +8,8 @@ chmod +x rustup-init
 echo "source ~/.cargo/env" >> ~/.bashrc
 echo "export CC=musl-gcc" >> ~/.bashrc
 echo "export CFLAGS='-I/usr/include/x86_64-linux-musl -idirafter /usr/include'" >> ~/.bashrc
+echo "export LDFLAGS=-L/usr/lib/x86_64-linux-musl" >> ~/.bashrc
 echo "export OPENSSL_LIB_DIR=/usr/lib/x86_64-linux-gnu" >> ~/.bashrc
 echo "export OPENSSL_INCLUDE_DIR=/usr/include/openssl" >> ~/.bashrc
-git clone https://github.com/maidsafe/safe-cli
+echo "export RUSTFLAGS='-C linker=musl-gcc'" >> ~/.bashrc
+git clone https://github.com/jacderida/safe_vault

@@ -3,12 +3,9 @@
 apt-get install -y apt-file \
     gcc \
     git \
-    libc6-dev-i386 \
     libssl-dev \
-    make \
     musl-dev \
     musl-tools \
-    pkg-config \
     vim
 apt-file update
 [[ ! -f "/usr/include/openssl/opensslconf.h" ]] && ln -s \
