@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export DEBIAN_FRONTEND=noninteractive
+apt-get update -y
+apt-get install -y curl gcc libssl-dev python unzip
+curl -L -O https://dl.google.com/android/repository/android-ndk-r20-linux-x86_64.zip
+unzip android-ndk-r20-linux-x86_64.zip -d /usr/local/lib
+mkdir /usr/local/bin/android-toolchains
+cd /usr/local/lib/android-ndk-r20/build/tools
+./make_standalone_toolchain.py --arch arm \
+    --api 21 --install-dir /usr/local/bin/android-toolchains --force
