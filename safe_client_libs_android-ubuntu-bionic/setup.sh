@@ -9,3 +9,5 @@ mkdir /usr/local/bin/android-toolchains
 cd /usr/local/lib/android-ndk-r20/build/tools
 ./make_standalone_toolchain.py --arch arm \
     --api 21 --install-dir /usr/local/bin/android-toolchains --force
+./make_standalone_toolchain.py --arch x86_64 \
+    --api 21 --install-dir /usr/local/bin/android-toolchains --force
