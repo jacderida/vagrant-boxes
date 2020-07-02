@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vbguest.auto_update = false
+  config.vm.define "ubuntu" do |ubuntu|
+    ubuntu.vm.box = "ubuntu/bionic64"
+    ubuntu.vm.provision "file", source: "~/.ssh/id_rsa", destination: "/home/vagrant/.ssh/id_rsa"
+    ubuntu.vm.provision "shell", inline: "apt-get update -y"
+    ubuntu.vm.provision "shell", path: "setup.sh"
+  end
+end
