@@ -6,9 +6,9 @@
       <libosinfo:os id="http://microsoft.com/win/10"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memory>4194304</memory>
-  <currentMemory>4194304</currentMemory>
-  <vcpu>2</vcpu>
+  <memory>8388608</memory>
+  <currentMemory>8388608</currentMemory>
+  <vcpu>4</vcpu>
   <os>
     <type arch="x86_64" machine="q35">hvm</type>
   </os>
@@ -43,14 +43,14 @@
     </disk>
     <disk type="file" device="cdrom">
       <driver name="qemu" type="raw"/>
-      <source file="/var/lib/libvirt/images/Win10_21H1_English_x64.iso"/>
+      <source file="/var/lib/libvirt/images/Win10_22H2_English_x64.iso"/>
       <target dev="sdb" bus="sata"/>
       <readonly/>
       <boot order="1"/>
     </disk>
     <disk type="file" device="cdrom">
       <driver name="qemu" type="raw"/>
-      <source file="/var/lib/libvirt/images/virtio-win-0.1.196.iso"/>
+      <source file="/var/lib/libvirt/images/virtio-win-0.1.229.iso"/>
       <target dev="sdc" bus="sata"/>
       <readonly/>
     </disk>
